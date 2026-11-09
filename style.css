@@ -1,0 +1,1107 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --verde: #113d34;
+  --verde-oscuro: #0d2d28;
+  --verde-medio: #1e5d52;
+  --verde-claro: #edf3f0;
+  --amarillo: #c7a76a;
+  --dorado: #a57b39;
+  --rojo: #8d3d35;
+  --blanco: #fff;
+  --gris: #4f5752;
+  --papel: #f8f4ee;
+  --papel-oscuro: #efe1c7;
+  --linea: rgba(17, 61, 52, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f4f0ea 0%, #ece2d0 36%, #f6f3ef 100%);
+  color: var(--verde-oscuro);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.oculto {
+  display: none !important;
+}
+
+/* BARRA SUPERIOR */
+
+.barra-superior {
+  min-height: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  color: var(--verde-oscuro);
+  background: transparent;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.marca img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.marca strong,
+.marca span {
+  display: block;
+}
+
+.marca strong {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.marca span {
+  font-size: 10px;
+  color: #d9e9df;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+.boton {
+  padding: 12px 18px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 0;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: transform .2s ease, opacity .2s ease;
+  box-shadow: none;
+}
+
+.boton:hover {
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
+.boton-claro {
+  color: var(--verde-oscuro);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(17, 61, 52, 0.2);
+}
+
+.boton-verde {
+  color: #fff;
+  background: linear-gradient(180deg, #173d35, #0d2d28);
+}
+
+.boton-dorado {
+  color: var(--verde-oscuro);
+  background: linear-gradient(180deg, #d8b976, #c19b58);
+  padding: 15px 24px;
+  letter-spacing: 0.12em;
+  border-color: rgba(17, 61, 52, 0.15);
+}
+
+/* PORTADA PRINCIPAL */
+
+.escenario {
+  width: 100%;
+  padding: 35px 18px 50px;
+}
+
+.portada-principal {
+  position: relative;
+  isolation: isolate;
+  min-height: 760px;
+  max-width: 1180px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 55px 20px 75px;
+  text-align: center;
+  color: white;
+  border-radius: 0;
+  background:
+    linear-gradient(180deg, rgba(16, 50, 42, 0.98), rgba(10, 35, 31, 0.98)),
+    linear-gradient(135deg, #113d34 0%, #0d2d28 100%);
+  box-shadow: none;
+  border: 1px solid rgba(201, 167, 91, 0.42);
+}
+
+.portada-principal::before,
+.portada-principal::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.portada-principal::before {
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  top: -130px;
+  border: 1px solid rgba(201, 167, 91, 0.18);
+  border-radius: 50%;
+}
+
+.portada-principal::after {
+  width: 500px;
+  height: 500px;
+  left: -160px;
+  bottom: -180px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+}
+
+.contenido-portada {
+  position: relative;
+  z-index: 2;
+  width: min(92%, 980px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: aparecer .8s ease;
+}
+
+.escudo-portada {
+  width: 118px;
+  height: 118px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+  filter: grayscale(8%) sepia(10%) brightness(1.05);
+  opacity: 0.96;
+}
+
+.portada-superior {
+  color: #d9bb72;
+  letter-spacing: 0.3em;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.contenido-portada h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(44px, 6vw, 90px);
+  line-height: 0.92;
+  letter-spacing: 0.04em;
+  margin: 20px 0 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.contenido-portada h1 span {
+  color: #d9bb72;
+  font-weight: 700;
+}
+
+.separador-dorado {
+  width: 180px;
+  height: 2px;
+  margin: 26px auto;
+  border-radius: 0;
+  background: linear-gradient(90deg, transparent, #d9bb72, transparent);
+}
+
+.texto-anuario {
+  font-size: 17px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(255,255,255,0.95);
+}
+
+.numero-anio {
+  color: #d9bb72;
+  font-size: clamp(74px, 10vw, 118px);
+  font-weight: 800;
+  line-height: 1;
+  margin-top: 10px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.frase-portada {
+  margin: 24px 0 22px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: clamp(21px, 2vw, 28px);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  width: min(100%, 620px);
+  text-align: center;
+  font-weight: 500;
+}
+
+.ciudad-portada {
+  font-size: 10px;
+  letter-spacing: 0.36em;
+  margin: 18px 0 26px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+#abrir-libro {
+  transform: none;
+  border-radius: 0;
+  min-width: 230px;
+  background: linear-gradient(180deg, #d2b46d, #c39e54);
+  color: #102b28;
+  box-shadow: none;
+}
+
+.ornamento {
+  position: absolute;
+  z-index: 1;
+  border: 1px solid rgba(216, 183, 106, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ornamento-1 {
+  width: 470px;
+  height: 470px;
+  top: -170px;
+  right: -120px;
+}
+
+.ornamento-2 {
+  width: 380px;
+  height: 380px;
+  left: -130px;
+  bottom: -150px;
+}
+
+.borde-portada {
+  position: absolute;
+  height: 12px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    var(--verde-oscuro) 0 34%,
+    var(--amarillo) 34% 58%,
+    var(--rojo) 58% 78%,
+    #f2dfb8 78% 100%
+  );
+}
+
+/* ZONA DEL LIBRO */
+
+.zona-libro {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.controles-libro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 auto 20px;
+  max-width: 1200px;
+}
+
+#indicador-pagina {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--verde-oscuro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.libro-marco {
+  position: relative;
+  padding: 18px 18px 22px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #d9d6cf, #cfc9bf);
+  border: 1px solid rgba(62, 71, 64, 0.15);
+  box-shadow: 0 20px 60px rgba(14, 30, 24, 0.14);
+  animation: libro-flotar 5s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes libro-flotar {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(0deg);
+    box-shadow: 0 20px 60px rgba(14, 30, 24, 0.14);
+  }
+  50% {
+    transform: translateY(-6px) rotateX(1deg);
+    box-shadow: 0 28px 70px rgba(14, 30, 24, 0.18);
+  }
+}
+
+.lomo {
+  display: none;
+}
+
+.libro {
+  position: relative;
+  min-height: 600px;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+/* Cada página utiliza la plantilla original */
+
+.pagina-libro {
+  width: 100%;
+  background: var(--papel);
+  border: 1px solid rgba(112, 122, 118, 0.14);
+  box-shadow: 0 14px 26px rgba(22, 39, 30, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  animation: aparecer .35s ease;
+}
+
+.pagina-libro[hidden] {
+  display: none !important;
+}
+
+.pagina-libro.debajo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.pagina-libro.pasando-siguiente,
+.pagina-libro.pasando-anterior {
+  position: relative;
+  z-index: 2;
+  backface-visibility: hidden;
+}
+
+.pagina-libro.pasando-siguiente {
+  transform-origin: left center;
+  animation: pasar-siguiente .65s ease-in-out forwards;
+}
+
+.pagina-libro.pasando-anterior {
+  transform-origin: right center;
+  animation: pasar-anterior .65s ease-in-out forwards;
+}
+
+.pagina-libro .libro {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 38px 34px 28px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  background: linear-gradient(180deg, rgba(249,245,239,0.96), rgba(249,245,239,0.98));
+}
+
+.pagina-libro .libro::before,
+.pagina-libro .libro::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index: 5;
+  background: transparent;
+}
+
+.pagina-libro .libro::before {
+  top: 0;
+}
+
+.pagina-libro .libro::after {
+  bottom: 0;
+}
+
+/* ENCABEZADO DEL ESTUDIANTE */
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 18px 12px 24px;
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid rgba(17, 61, 52, 0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(232,241,236,0.04));
+}
+
+.escudo {
+  width: 90px;
+  height: 104px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px rgba(17, 61, 52, 0.1));
+}
+
+.institucion {
+  flex: 0 1 auto;
+  text-align: center;
+}
+
+.institucion span {
+  display: block;
+  font-size: clamp(10px, 1.6vw, 16px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--verde-medio);
+  font-weight: 800;
+}
+
+.institucion h2 {
+  margin-top: 6px;
+  font-size: clamp(17px, 2.2vw, 28px);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  color: var(--verde-oscuro);
+  text-transform: uppercase;
+}
+
+.lema {
+  display: none !important;
+}
+
+/* NOMBRE Y TÍTULO */
+
+.portada-estudiante {
+  min-height: 930px;
+  position: relative;
+  isolation: isolate;
+  padding: 20px 0 30px;
+}
+
+.titulo-fondo {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  font-size: clamp(70px, 15vw, 170px);
+  font-weight: 900;
+  color: rgba(17, 61, 52, 0.04);
+  white-space: nowrap;
+  z-index: -1;
+  user-select: none;
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.04em;
+}
+
+.titulo-estudiante {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.titulo-estudiante h1 {
+  display: inline-block;
+  color: var(--verde-oscuro);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 6vw, 82px);
+  line-height: 0.96;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+  text-shadow: none;
+  filter: none;
+}
+
+.titulo-estudiante span {
+  display: block;
+  margin-top: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: var(--verde-medio);
+}
+
+/* FOTOGRAFÍA E HISTORIA */
+
+.estudiante-pagina {
+  width: min(100%, 960px);
+  min-height: 620px;
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 1.5fr;
+  align-items: stretch;
+  gap: 0;
+  z-index: 2;
+}
+
+.foto-estudiante {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  object-fit: cover;
+  object-position: center;
+  background: linear-gradient(180deg, #fff, #f2efe8);
+  border: 1px solid rgba(17, 61, 52, 0.12);
+  border-right: 0;
+  border-radius: 16px 0 0 16px;
+  box-shadow: 0 14px 26px rgba(18, 30, 24, 0.07);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.foto-estudiante:hover {
+  transform: translateY(-2px) scale(1.006);
+  box-shadow: 0 16px 32px rgba(18, 30, 24, 0.1);
+}
+
+.informacion {
+  width: 100%;
+  padding: 24px 24px 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(235,243,239,0.96));
+  border: 1px solid rgba(17, 61, 52, 0.1);
+  border-left: 0;
+  border-radius: 0 16px 16px 0;
+  box-shadow: 0 12px 22px rgba(10, 39, 30, 0.05);
+}
+
+.etiqueta {
+  color: var(--dorado);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.informacion h2 {
+  margin: 12px 0 10px;
+  font-size: 25px;
+  color: var(--verde-oscuro);
+}
+
+.informacion h3 {
+  margin: 20px 0 10px;
+  color: var(--verde-medio);
+  font-size: 18px;
+}
+
+.informacion p,
+.informacion li {
+  color: var(--gris);
+  line-height: 1.7;
+}
+
+.informacion ul {
+  padding-left: 22px;
+}
+
+/* FRASES DECORATIVAS */
+
+.frase {
+  display: none !important;
+}
+
+.flecha {
+  display: none !important;
+}
+
+.frase-izquierda,
+.frase-derecha,
+.frase-inferior-izquierda,
+.frase-inferior-derecha {
+  display: none !important;
+}
+
+/* DATOS PERSONALES */
+
+.datos-estudiante {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 20px 0 30px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dato {
+  padding: 20px 16px 18px;
+  border-top: 4px solid var(--amarillo);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(232,240,235,0.95));
+  box-shadow: 0 8px 18px rgba(17, 36, 28, 0.06);
+  transition: transform .3s ease, box-shadow .3s ease;
+  overflow-wrap: anywhere;
+}
+
+.dato:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 18px rgba(17, 36, 28, 0.08);
+}
+
+.dato h3 {
+  margin-bottom: 10px;
+  font-size: 17px;
+  color: var(--verde-oscuro);
+  font-weight: 800;
+}
+
+.dato p {
+  color: var(--gris);
+  line-height: 1.6;
+}
+
+/* FIRMA */
+
+.seccion-firma {
+  margin: 35px 0 25px;
+  text-align: center;
+}
+
+.firma-estudiante {
+  display: block;
+  max-width: 190px;
+  max-height: 90px;
+  object-fit: contain;
+  margin: 0 auto 8px;
+  filter: drop-shadow(0 8px 14px rgba(13, 77, 61, 0.12));
+}
+
+.linea-firma {
+  width: 220px;
+  max-width: 80%;
+  border-top: 1px solid rgba(13, 77, 61, 0.3);
+  margin: 10px auto;
+}
+
+.nombre-firma {
+  display: none !important;
+}
+
+.seccion-firma span {
+  display: none !important;
+}
+
+/* PIE DE PÁGINA DEL ESTUDIANTE */
+
+.pie {
+  padding: 22px 0 10px;
+  border-top: 2px solid rgba(13, 77, 61, 0.12);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.pie span {
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pie p {
+  font-style: italic;
+}
+
+/* CONTROLES DE PÁGINA */
+
+.controles-hojas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 24px auto 0;
+}
+
+.boton-flecha {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid rgba(13, 77, 61, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--verde-oscuro);
+  border-radius: 12px;
+  padding: 12px 17px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.boton-flecha:hover:not(:disabled) {
+  background: rgba(230, 239, 233, 0.95);
+}
+
+.boton-flecha:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+.puntos-pagina {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.punto {
+  border: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(13, 77, 61, 0.25);
+  padding: 0;
+  transition: transform .25s ease, background .25s ease;
+}
+
+.punto.activo {
+  background: var(--verde);
+  transform: scale(1.4);
+}
+
+.ayuda-libro {
+  text-align: center;
+  color: var(--gris);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+
+.pie-general {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px 30px;
+  background: linear-gradient(180deg, #0f4138, #0a2f28);
+  color: rgba(255, 255, 255, 0.88);
+  padding: 23px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ANIMACIONES */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pasar-siguiente {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(-160deg);
+  }
+}
+
+@keyframes pasar-anterior {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(160deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pagina-libro.pasando-siguiente,
+  .pagina-libro.pasando-anterior {
+    animation-duration: .01ms;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+  .escenario {
+    padding: 20px 10px 35px;
+  }
+
+  .portada-principal {
+    min-height: 690px;
+  }
+
+  .pagina-libro .libro {
+    padding: 25px 18px;
+  }
+
+  .encabezado {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .institucion {
+    flex-basis: 65%;
+  }
+
+  .lema {
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .portada-estudiante {
+    min-height: auto;
+    padding-bottom: 30px;
+  }
+
+  .estudiante-pagina {
+    width: 90%;
+    min-height: auto;
+  }
+
+  .foto-estudiante {
+    height: 480px;
+  }
+
+  .frase {
+    position: relative;
+    inset: auto;
+    max-width: 100%;
+    margin: 22px 5px;
+    font-size: 18px;
+    transform: none;
+  }
+
+  .frase .flecha {
+    display: none;
+  }
+
+  .datos-estudiante {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .barra-superior {
+    padding: 10px;
+  }
+
+  .marca strong {
+    font-size: 11px;
+  }
+
+  .marca span {
+    font-size: 9px;
+  }
+
+  .marca img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .boton {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .portada-principal {
+    min-height: 640px;
+    padding: 40px 15px;
+    border-radius: 18px;
+  }
+
+  .escudo-portada {
+    width: 90px;
+    height: 90px;
+  }
+
+  .portada-superior {
+    letter-spacing: 0.25em;
+  }
+
+  .texto-anuario {
+    font-size: 14px;
+    letter-spacing: 0.28em;
+  }
+
+  .frase-portada {
+    font-size: 18px;
+  }
+
+  .pagina-libro .libro {
+    padding: 22px 12px;
+  }
+
+  .escudo {
+    width: 75px;
+    height: 90px;
+  }
+
+  .titulo-estudiante h1 {
+    letter-spacing: 0.02em;
+  }
+
+  .titulo-estudiante span {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+  }
+
+  .foto-estudiante {
+    height: 390px;
+  }
+
+  .informacion {
+    padding: 18px;
+  }
+
+  .informacion h2 {
+    font-size: 23px;
+  }
+
+  .pie {
+    flex-direction: column;
+  }
+
+  .controles-hojas {
+    gap: 5px;
+  }
+
+  .boton-flecha {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .puntos-pagina {
+    max-width: 100px;
+  }
+}
+
+/* IMPRESIÓN: UNA PÁGINA POR ESTUDIANTE */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  body {
+    padding: 0;
+    background: white;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .barra-superior,
+  .controles-libro,
+  .controles-hojas,
+  .ayuda-libro,
+  .pie-general,
+  .portada-principal {
+    display: none !important;
+  }
+
+  .escenario,
+  .zona-libro,
+  .libro-marco,
+  .libro {
+    display: block !important;
+    max-width: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    background: white;
+    overflow: visible;
+  }
+
+  .pagina-libro,
+  .pagina-libro[hidden] {
+    display: block !important;
+    width: 100%;
+    box-shadow: none;
+    border: 0;
+    animation: none;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .pagina-libro:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .pagina-libro .libro {
+    padding: 16px;
+  }
+
+  .portada-estudiante {
+    min-height: 0;
+  }
+
+  .estudiante-pagina {
+    width: 75%;
+    min-height: 0;
+  }
+
+  .foto-estudiante {
+    height: 340px;
+  }
+
+  .frase {
+    font-size: 15px;
+    max-width: 22%;
+  }
+
+  .frase-izquierda,
+  .frase-derecha {
+    top: 220px;
+  }
+
+  .datos-estudiante {
+    gap: 8px;
+  }
+
+  .dato {
+    padding: 12px;
+  }
+
+  .dato h3 {
+    font-size: 14px;
+  }
+
+  .dato p {
+    font-size: 12px;
+  }
+
+  .foto-estudiante:hover,
+  .dato:hover {
+    transform: none;
+  }
+}

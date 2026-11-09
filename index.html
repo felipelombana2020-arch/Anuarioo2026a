@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anuario escolar 2026">
+  <title>Anuario 2026 | Eugenio Ferro Falla</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="escenario">
+
+    <!-- PORTADA PRINCIPAL DEL LIBRO -->
+    <section id="portada-principal" class="portada-principal">
+      <div class="ornamento ornamento-1"></div>
+      <div class="ornamento ornamento-2"></div>
+
+      <div class="contenido-portada">
+        <img class="escudo-portada" src="img/escudo.png"
+             alt="Escudo de la institución"
+             onerror="this.style.display='none'">
+
+        <p class="portada-superior">INSTITUCIÓN EDUCATIVA</p>
+        <h1>EUGENIO<br><span>FERRO FALLA</span></h1>
+
+        <div class="separador-dorado"></div>
+
+        <p class="texto-anuario">ANUARIO ESCOLAR</p>
+        <p class="numero-anio">2026</p>
+
+        <p class="frase-portada">
+          Cada estudiante deja una huella.<br>
+          Cada recuerdo merece una página.
+        </p>
+
+        <p class="ciudad-portada">CAMPOALEGRE · HUILA · COLOMBIA</p>
+
+        <button class="boton boton-dorado" id="abrir-libro">
+          ABRIR ANUARIO <span>→</span>
+        </button>
+      </div>
+
+      <div class="borde-portada"></div>
+    </section>
+
+    <!-- LIBRO: LA PORTADA Y LAS 30 PÁGINAS -->
+    <section id="zona-libro" class="zona-libro oculto">
+
+      <div class="libro-marco">
+        <div class="lomo"></div>
+        <div class="controles-libro">
+          <button class="boton boton-claro" id="volver-portada">
+            ← Portada
+          </button>
+          <span id="indicador-pagina">Página 1 de 30</span>
+          <button class="boton boton-verde" id="imprimir">
+            Imprimir / PDF
+          </button>
+        </div>
+
+        <div id="libro" class="libro">
+          <!-- Las 30 páginas se crean desde script.js -->
+        </div>
+
+        <nav class="controles-hojas" aria-label="Navegación del anuario">
+          <button class="boton-flecha" id="anterior" aria-label="Página anterior">
+            ❮ <span>Anterior</span>
+          </button>
+
+          <div id="puntos-pagina" class="puntos-pagina"></div>
+
+          <button class="boton-flecha" id="siguiente" aria-label="Página siguiente">
+            <span>Siguiente</span> ❯
+          </button>
+        </nav>
+      </div>
+
+      <p class="ayuda-libro">
+        Usa las flechas para pasar las páginas del anuario.
+      </p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
